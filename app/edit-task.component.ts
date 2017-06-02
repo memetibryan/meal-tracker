@@ -1,18 +1,22 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Task } from './task.model';
+import { Food } from './task.model';
 
 @Component({
   selector: 'edit-task',
   template: `
     <div *ngIf="childSelectedTask">
-      <h1>Edit Task</h1>
+      <h1>Edit Food Log</h1>
       <div>
-        <label>Enter Task Description:</label>
+        <label>Enter Food Name:</label>
+        <input [(ngModel)]="childSelectedTask.name">
+      </div>
+      <div>
+        <label>Enter Food Description:</label>
         <input [(ngModel)]="childSelectedTask.description">
       </div>
       <div>
-        <label>Enter Task ID:</label>
-        <input [(ngModel)]="childSelectedTask.id">
+        <label>Enter Food Callories:</label>
+        <input [(ngModel)]="childSelectedTask.callories">
         <button (click)="doneClicked()">Done</button>
       </div>
     </div>
@@ -20,7 +24,7 @@ import { Task } from './task.model';
 })
 
 export class EditTaskComponent {
-  @Input() childSelectedTask: Task;
+  @Input() childSelectedTask: Food;
   @Output() doneClickedSender = new EventEmitter();
   doneClicked() {
     this.doneClickedSender.emit();
