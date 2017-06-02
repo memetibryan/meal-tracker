@@ -9,10 +9,10 @@ import { Food } from './task.model';
   <option value="types">Show Food Types</option>
   <option value="callories" selected="selected">Show callories</option>
 </select>
-    <div *ngFor="let currentTask of childTaskList | completeness:selectedCompleteness">
-      <h3>Food Name: {{ currentTask.name }}</h3>
-      <h3>Meal Description: {{ currentTask.description }}</h3>
-      <h3>Food Callories: {{ currentTask.callories }}</h3>
+    <div *ngFor="let currentTask of childTaskList | completeness:selectedCompleteness | completeness:selectedCallories">
+      <h3><strong>Food Name:</strong> {{ currentTask.name }}</h3>
+      <h3><strong>Meal Description:</strong> {{ currentTask.description }}</h3>
+      <h3><strong>Food Callories:</strong> {{ currentTask.callories }}</h3>
       <button (click)="editButtonHasBeenClicked(currentTask)">Edit</button>
     </div>
   `

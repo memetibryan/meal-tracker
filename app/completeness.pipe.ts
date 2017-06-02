@@ -7,16 +7,15 @@ import {Food} from './task.model';
 })
 
 export class CompletenessPipe implements PipeTransform {
-  transform(input: Food[], desiredCompleteness, word1, word2, word3, word4) {
-    console.log(word1);
-    console.log(word2);
-    console.log(word3);
-    console.log(word4);
+  transform(input: Food[], desiredCompleteness, name, description, callories) {
+    console.log(name);
+    console.log(description);
+    console.log(callories);
 
-    var output: Food[] = [];
+  var output: Food[] = [];
     if(desiredCompleteness === "callories") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].done === false) {
+        if (input[i].done === true) {
           output.push(input[i]);
         }
       }
