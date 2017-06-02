@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from './task.model';
 
 @Component({
-  selector: 'my-app',
+  selector: 'edit-task',
   template: `
     <div *ngIf="childSelectedTask">
       <h1>Edit Task</h1>
