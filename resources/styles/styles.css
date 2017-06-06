@@ -1,0 +1,28 @@
+/*header*/
+header{
+  border-bottom: solid;
+  color: blue;
+  background-image: url(http://students.sras.org/wp-content/uploads/2015/11/Family-Thanksgiving-Turkey-Dinner-12.jpg);
+}
+
+.head1{
+  color: blue;
+  font-size: 60px;
+  font-family: cursive;
+}
+
+.head2{
+  color: red;
+  font-family: cursive;
+}
+
+/*body*/
+h2{
+  font-family: cursive;
+  font-family: cursive;
+}
+
+body{
+	color: blue;
+	background-image: url(http://students.sras.org/wp-content/uploads/2015/11/Family-Thanksgiving-Turkey-Dinner-12.jpg);
+}

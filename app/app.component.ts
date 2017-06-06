@@ -31,9 +31,8 @@ import { Food } from './task.model';
 })
 
 export class AppComponent {
-  public masterTaskList:Food[] = [
-      new Food()
-  ];
+  public masterTaskList:Food[] = [];
+  
   selectedTask: Food = null;
   showDetails(clickedTask: Food) {
     this.selectedTask = clickedTask;
