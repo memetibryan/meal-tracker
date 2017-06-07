@@ -1,30 +1,37 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Task } from './task.model';
+import { Food } from './task.model';
 
 @Component({
   selector: 'new-task',
   template: `
-    <h1>New Task</h1>
+    <h1><strong>Add Food To Log</strong></h1>
     <div>
-      <label>Enter Task Description:</label>
+      <label>Enter Food Name:</label>
+      <input #newName>
+    </div>
+
+    <div>
+      <label>Describe The Food:</label>
       <input #newDescription>
     </div>
+
     <div>
-      <label>Enter Task ID:</label>
-      <input #newId>
+      <label>Enter Food Callories:</label>
+      <input #newCallories>
       <button (click)="
-        addClicked(newDescription.value, newId.value);
+        addClicked(newName.value, newDescription.value, newCallories.value);
+        newName.value='';
         newDescription.value='';
-        newId.value='';
-      ">Add</button>
+        newCallories.value='';
+      ">Add To Log</button>
     </div>
   `
 })
 
 export class NewTaskComponent {
   @Output() newTaskSender = new EventEmitter();
-  addClicked(description: string, id: number) {
-    var newTaskToAdd: Task = new Task(description, id);
+  addClicked(name: string, description: string, callories: number) {
+    var newTaskToAdd: Food = new Food(name, callories , description);
     this.newTaskSender.emit(newTaskToAdd);
   }
 }

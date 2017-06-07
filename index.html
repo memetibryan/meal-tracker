@@ -1,25 +1,39 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="build/css/vendor.css">
-    <script src="build/js/vendor.min.js"></script>
-    <script type="text/javascript" src="build/js/app.js"></script>
 
-    <!-- 1. Load libraries -->
-     <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <!-- 2. Configure SystemJS -->
-    <script src="systemjs.config.js"></script>
+<head>
+  <title>Meal Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="build/js/vendor.min.js"></script>
+  <link rel="stylesheet" href="build/css/vendor.css">
+  <!-- 1. Load libraries -->
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <!-- 2. Configure SystemJS -->
+  <script src="systemjs.config.js"></script>
 
-    <title>Meal Tracker</title>
-  </head>
+  <link rel="stylesheet" href="build/css/styles.css">
+  <script>
+    System.import('app').catch(function(err) {
+      console.error(err);
+    });
+  </script>
+</head>
+<!-- 3. Display the application -->
+<header>
+  <div class="jumbotron">
+    <h1><span class="head1">Food ||</span><span class="head2">Web app..</span></h1>
+  </div>
+</header>
 
-  <body>
-    <my-app>Loading....</my-app>
-  </body>
+<body>
+  <div class="container-fluid">
+    <h2>Welcome to the <strong><em>Food Web App</em></strong></h2>
+    <meal-app>Loading your account.....</meal-app>
+  </div>
+</body>
+
 </html>
